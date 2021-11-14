@@ -1,5 +1,9 @@
 @import './_reset';
+@import 'layout/grid';
 @import 'theme/color';
 @import 'theme/font';
 @import 'theme/theme';
-@import 'layout/grid';
+
+* {
+    box-sizing: border-box;
+}
