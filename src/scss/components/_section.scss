@@ -1,0 +1,75 @@
+.section {
+    position: relative;
+    width: 100%;
+    height: 692px;
+    padding: 50px 0 0 0;
+
+    &__link-overall {
+        position: absolute;
+    }
+
+    &__content {
+        &-wrapper {
+            width: 100%;
+            height: auto;
+            text-align: center;
+        }
+        &-img {
+            padding: 30px 0 0 0;
+            width: 45px;
+            height: auto;
+        }
+        &-title {
+            font-size: 32px;
+            line-height: 1.125;
+            font-weight: 600;
+            letter-spacing: .004em;
+            font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+            margin: auto;
+            max-width: 300px;
+        }
+        &-subtitle {
+
+        }
+        &-cta-links {
+            margin-top: 10px;
+        }
+        &-link {
+
+        }
+    }
+
+    &__img-wrapper {
+        height: 300px;
+        padding-top: 50px;
+
+        & li:nth-child(1) > figure {
+            background-image: url('/img/multiple-macbookpro.png');
+        }
+        & li:nth-child(2) > figure {
+            background-image: url('/img/multiple-ipadmini.png');
+        }
+        & li:nth-child(3) > figure {
+            background-image: url('/img/multiple-ipadair.png');
+        }
+    }
+
+    &__img {
+        height: 100%;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        
+        &-animated {
+            transform: rotate(0deg);
+            animation: rotateToTheRight;
+            animation-timing-function: ease;
+            animation-duration: 6s;
+        }
+    }
+}
+
+@keyframes rotateToTheRight {
+    0% {transform: rotate(-10deg)}
+    100% {transform: rotate(0deg)}
+}

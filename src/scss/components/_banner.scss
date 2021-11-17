@@ -1,0 +1,17 @@
+.banner {
+    width: 100%;
+    padding: 12px 0;
+
+    &__text {
+        text-align: center;
+        font-size: 14px;
+        p {
+            min-width: 265px;
+        }
+    }
+
+    &--warning {
+        background-color: #e34140;
+        color: white;
+    }
+}

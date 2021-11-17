@@ -1,5 +1,7 @@
 .global-nav {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     background-color: $dark-grey;
     transition: background-color 0.6s ease-in;

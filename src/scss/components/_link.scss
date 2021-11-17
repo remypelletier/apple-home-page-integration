@@ -1,6 +1,21 @@
 .link {
     cursor: pointer;
+
     &__default {
         color: $link-color-default;
+    }
+
+    &__white {
+        color: white;
+    }
+
+    &--right-arrow {
+        &::after {
+            content: '>';
+            margin-left: 4px;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }

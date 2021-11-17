@@ -24,6 +24,10 @@ $grid-gutter-width: 1.5rem;
     width: 100%;
 }
 
+.col-centered {
+    margin: auto;
+}
+
 @for $i from 1 through $grid-cols {
     .col-#{$i} {
         flex-basis: math.div(100, math.div($grid-cols, $i)) * 1%;
