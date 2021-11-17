@@ -15,6 +15,7 @@ const path = {
         js: './dist/js',
         img: './dist/img',
         html: './dist',
+        font: './dist/font',
     },
     src: {
         folder: './src',
@@ -22,6 +23,7 @@ const path = {
         js: './src/js',
         img: './src/img',
         html: './src',
+        font: './src/font',
     },
 };
 
@@ -51,6 +53,10 @@ const buildTasks = {
         return src(`${path.src.html}/**/*.html`)
             .pipe(dest(path.dest.html));
     },
+    fontTask: () => {
+        return src(`${path.src.font}/**/*`)
+            .pipe(dest(path.dest.font));
+    },
 };
 
 const devTasks = {
@@ -76,6 +82,10 @@ const devTasks = {
         return src(`${path.src.html}/**/*.html`)
             .pipe(dest(path.dest.html));
     },
+    fontTask: () => {
+        return src(`${path.src.font}/**/*`)
+            .pipe(dest(path.dest.font));
+    },
     browserSyncTask: (done) => {
         browserSync.reload();
         done();
@@ -93,7 +103,6 @@ const dev = () => {
             `${path.src.scss}/**/*.scss`,
             `${path.src.js}/**/*.js`,
             `${path.src.html}/*.html`,
-            `${path.src.img}/**/*`,
         ],
         { ignoreInitial: true },
         series(
@@ -103,6 +112,7 @@ const dev = () => {
                 devTasks.jsTask,
                 devTasks.imgTask,
                 devTasks.htmlTask,
+                devTasks.fontTask,
             ),
             devTasks.browserSyncTask,
         ),
@@ -117,5 +127,6 @@ exports.build = series(
         buildTasks.jsTask,
         buildTasks.imgTask,
         buildTasks.htmlTask,
+        buildTasks.fontTask,
     ),
 );

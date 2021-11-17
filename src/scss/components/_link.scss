@@ -1,0 +1,6 @@
+.link {
+    cursor: pointer;
+    &__default {
+        color: $link-color-default;
+    }
+}

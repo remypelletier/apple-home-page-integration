@@ -1,0 +1,30 @@
+.input {
+    &__text {
+        position: relative;
+        display: inline-block;
+        border-radius: 8px;
+        font-size: 17px;
+        border: none;
+        padding: 3px 30px 4px;
+        background-color: $font-color-dark;
+        line-height: 29px;
+        flex-basis: 0;
+        color: white;
+        width: 100%;
+
+        &::placeholder {
+            color: #6b6b70;
+        }
+        &:focus-visible {
+            outline: none;
+        }
+
+    }
+    
+    &__group {
+        flex-grow: 1;
+        flex-basis: 0;
+        position: relative;
+        margin: 0 0 3px 0;
+    }
+}
