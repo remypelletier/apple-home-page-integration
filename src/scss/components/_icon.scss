@@ -1,0 +1,94 @@
+.icon {
+
+    &__burger {
+
+        position: relative;
+        width: 48px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 43%;
+            left: 50%;
+            transform: translate(-50%) rotate(0);
+            width: 15px;
+            height: 1px;
+            background-color: $light-grey;
+            
+            transition: top .3s cubic-bezier(1,0,1,1), transform .3s cubic-bezier(0,1,1,1), background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 57%;
+            left: 50%;
+            transform: translate(-50%) rotate(0);
+            width: 15px;
+            height: 1px;
+            background-color: $light-grey;
+            transition: top .3s cubic-bezier(1,0,1,1), transform .3s cubic-bezier(0,1,1,1), background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        &:hover {
+            &::after {
+                background-color: white;
+            }
+            &::before {
+                background-color: white;
+            }
+        }
+
+    }
+
+    &__logo {
+        background-size: 16px 44px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url('/img/apple-icon.svg');
+        width: 48px;
+        min-width: 16px;
+
+        transition: filter 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        filter: invert(31%) sepia(88%) saturate(0%) hue-rotate(176deg) brightness(107%) contrast(91%);
+
+        &:hover {
+            filter: invert(0%) sepia(88%) saturate(0%) hue-rotate(176deg) brightness(107%) contrast(91%);
+        }
+    }
+
+    &__loop {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: inline-block;
+        width: 30px;
+        height: 36px;
+        background-image: url('/img/apple-loop.svg');
+        background-repeat: no-repeat;
+        background-size: 16px;
+        background-position: center;
+        transition: filter 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        filter: invert(58%) sepia(5%) saturate(322%) hue-rotate(202deg) brightness(95%) contrast(85%);
+    }
+    
+    &__cart {
+        width: 48px;
+        background-image: url('/img/apple-cart.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transition: filter 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), opacity .3s;
+        filter: invert(31%) sepia(88%) saturate(0%) hue-rotate(176deg) brightness(107%) contrast(91%);
+        opacity: 1;
+
+        &:hover {
+            filter: invert(0%) sepia(88%) saturate(0%) hue-rotate(176deg) brightness(107%) contrast(91%);
+        }
+    }
+
+    &--clickable {
+        cursor: pointer;
+    }
+
+}

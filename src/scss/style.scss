@@ -1,9 +1,20 @@
-@import './_reset';
-@import 'layout/grid';
-@import 'theme/color';
-@import 'theme/font';
-@import 'theme/theme';
+// base
+@import 'base/_reset';
+@import 'base/_font';
 
-* {
-    box-sizing: border-box;
-}
+// abstracts
+@import 'abstracts/color';
+
+// theme
+@import 'theme/theme'; 
+
+// layout
+@import 'layout/grid';
+@import 'layout/global-nav';
+
+// components
+@import 'components/utils';
+@import 'components/icon';
+@import 'components/input';
+@import 'components/link';
+@import 'components/title';

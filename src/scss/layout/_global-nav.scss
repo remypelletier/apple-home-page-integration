@@ -1,0 +1,531 @@
+.global-nav {
+    position: fixed;
+    width: 100%;
+    background-color: $dark-grey;
+    transition: background-color 0.6s ease-in;
+    z-index: 9999;
+
+    &__navbar {
+        display: flex;
+        justify-content: space-between;
+        height: 48px;
+        padding: 0;
+        transition: transform 0.3s;
+    }
+}
+
+.navbar {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 48px;
+        left: 0px;
+        height: 0;
+        overflow: hidden;
+        width: 100%;
+        transition: height 0.6s;
+        background-color: black;
+    }
+
+    &__form {
+        display: flex;
+        align-items: center;
+        transition: transform 1.5s;
+        transform: scale(1, 1) translateY(-25px);
+        transform-origin: 0 0;
+        padding: 0 10px 12px 10px;
+        border-bottom: 1px solid #424245;
+        z-index: 2;
+
+        &-cancel {
+            width: 0;
+            overflow: hidden;
+            animation-name: fadeWidthOut;
+            animation-duration: 0.3s;
+        }
+        
+        &-results {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-around;
+            animation-name: fadeSlideToTop;
+            animation-duration: 0.3s;
+            top: 20px;
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        &-result {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            transition: transform .8s;
+            transform: translateY(-25px);
+
+            a {
+                font-size: 14px;
+                line-height: 40px;
+                color: $light-grey;
+    
+                &:hover {
+                    color: $link-color-default;
+                }
+    
+            }
+
+            &:not(:nth-child(9)):after {
+                content: '';
+                display: inline-block;
+                width: 100%;
+                height: 1px;
+                background-color: #424245;
+            }
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-around;
+        animation-name: fadeSlideYOut;
+        animation-duration: 0.3s;
+        padding: 10px 40px 6px 40px;
+        opacity: 1;
+        height: auto;
+        overflow: visible;
+    }
+    
+    &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        transition: transform .8s;
+        transform: translateY(-25px);
+
+        a {
+            font-size: 17px;
+            line-height: 40px;
+            color: $light-grey;
+            transition: color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+
+            &:hover {
+                color: white;
+            }
+
+        }
+
+        &:not(:nth-child(9)):after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+            height: 1px;
+            background-color: #424245;
+        }
+
+        &--loop {
+            display: none;
+            width: 48px;
+            height: 48px;
+            background-image: url('/img/apple-loop.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            transition: filter 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            filter: invert(31%) sepia(88%) saturate(0%) hue-rotate(176deg) brightness(107%) contrast(91%);
+            cursor: pointer;
+
+            &:hover {
+                filter: invert(0%) sepia(88%) saturate(0%) hue-rotate(176deg) brightness(107%) contrast(91%);
+            }
+        }
+        &:hover {
+            color: white;
+        }
+    }
+
+}
+
+@media screen and (min-width: ($grid-breakpoint-md * 1px)) {
+    .global-nav {
+        .icon__burger {
+            display: none;
+        }
+    }
+    .navbar {
+        padding: 0 22px;
+        
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            position: static;
+            height: auto;
+            overflow: visible;
+            background-color: transparent;
+        }
+
+        &__form {
+            display: none;
+
+            &-results {
+                display: none;
+            }
+        }
+
+        &__links {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-around;
+            padding: 0;
+            opacity: 1;
+            height: auto;
+            overflow: visible;
+            animation: none;
+        }
+
+        &__link {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            transition:  none;
+            transform: translateY(0px);
+            
+            a {
+                font-size: 12px;
+                padding: 0 8px;
+                line-height: 48px;
+            }
+            
+            &:not(:nth-child(9)):after {
+                display: none;
+            }
+        }
+    }
+}
+
+/**
+*** Class added on global-nav element when user open mobile menu
+**/
+.small-screen__menu-open {
+    &.global-nav {
+        background-color: black;
+    }
+    .icon {
+        &__burger {
+            &::after {
+                top: 50%;
+                transform: translate(-50%) rotate(45deg);
+                transition: top .3s cubic-bezier(0,1,1,1), transform .3s cubic-bezier(1,0,1,1);
+            }
+            
+            &::before {
+                top: 50%;
+                transform: translate(-50%) rotate(-45deg);
+                transition: top .3s cubic-bezier(0,1,1,1), transform .3s cubic-bezier(1,0,1,1);
+            }
+        }
+        &__cart {
+            opacity: 0;
+        }
+    }
+
+    .navbar {
+        &__form {
+            transition: transform 0.4s;
+            transform: scale(1, 1);
+        }
+        &__wrapper {
+            height: 100vh;
+        }
+        &__link {
+            transform: translateY(0);
+
+            @for $i from 1 through 9 {
+                &:nth-child(#{$i}) {
+                    transition: transform $i * 0.09s + 0.25;
+                }
+            }
+        }
+    }
+}
+
+/**
+*** Class added on global-nav when user use mobile search form
+**/
+.small-screen__form-open {
+    .global-nav__navbar {
+        transform: translateY(-32px);
+    }
+    .navbar {
+        &__links {
+            animation-name: fadeSlideYIn;
+            animation-duration: 0.3s;
+            transform: translateY(100px);
+            opacity: 0;
+            height: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        &__form {
+            &-results {
+                padding: 10px 40px 6px 40px;
+                opacity: 1;
+                height: auto;
+                top: 77px;
+                overflow: visible;
+                animation-name: fadeSlideToBottom;
+                animation-duration: 0.3s;
+            }
+            &-cancel {
+                padding: 0 8px;
+                margin-left: 10px;
+                width: auto;
+                overflow: visible;
+                flex-basis: 0;
+                animation-name: fadeWidthIn;
+                animation-duration: 0.3s;
+            }
+        }
+    }
+}
+
+/**
+*** Class added to have animation on form close
+**/
+.large-screen__initial-state {
+    
+    .navbar__link, .icon__logo, .icon__cart {
+        opacity: 1;
+        transform: scale(1);
+        transform-origin: 1 1;
+    }
+
+    .icon__logo {
+        animation: fadeScaleIn;
+        animation-duration: 0.1s;
+        animation-timing-function: ease-in;
+    }
+
+    @for $i from 1 through 10 {
+        .navbar__link:nth-child(#{$i}) {
+            animation: fadeScaleIn;
+            animation-duration: $i * 0.06s + 0.1;
+            animation-timing-function: ease-in;
+        }
+    }
+
+    .icon__cart {
+        animation: fadeScaleIn;
+        animation-duration: 0.76s;
+        animation-timing-function: ease-in;
+    }
+
+}
+
+/**
+*** Class added on form open
+**/
+.large-screen__form-open {
+
+    background-color: #1b1b1b;
+
+    .input__text {
+        background-color: #1b1b1b;
+    }
+
+    .utils__filter {
+        height: 100%;
+        overflow: visible;
+        opacity: 1;
+        animation: fadeOpacity;
+        animation-duration: 0.8s;
+    }
+
+    .navbar__form {
+        position: absolute;
+        transform: translate(0px, 6px);
+        opacity: 1;
+        display: flex;
+        border-bottom: none;
+        animation-name: fadeSlideX;
+        animation-duration: 2.6s;
+        animation-timing-function: cubic-bezier(0,1,0,1);
+        max-width: 680px;
+        width: 100%;
+        left: calc(50% - 340px);
+        padding: 0;
+
+        &-results {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-around;
+            animation: fadeOpacity;
+            animation-duration: 0.8s;
+            top: 48px;
+            width: 100%;
+            opacity: 1;
+            height: auto;
+            overflow: visible;
+            border-radius: 0 0 20px 20px;
+            max-width: 680px;
+            margin: auto;
+            background-color: white;
+            padding: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &-result {
+            margin: 3px 8px;
+            &::after {
+                display: none;
+            }
+            a {
+                padding: 0 40px;
+                line-height: 28px;
+                color: $font-color-dark;
+            }
+            &:hover {
+                background-color: $font-color-light;
+                a {
+                    color: #06c;
+                }
+            }
+        }
+
+        &-cancel {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            overflow: visible;
+            cursor: pointer;
+    
+            span {
+                display: none;
+            }
+    
+            &::after, &::before {
+                content: '';
+                position: absolute;
+                width: 1px;
+                background-color: white;
+                height: 15px;
+                top: 0;
+                left: 50%;
+            }
+            &::after {
+                transform: rotate(45deg);
+            }
+            &::before {
+                transform: rotate(-45deg);
+            }
+    
+        }
+    }
+
+    .title__form-section {
+        padding: 10px 10px 10px 35px;
+        margin-top: 40px;
+    }
+
+    .navbar__link, .icon__logo, .icon__cart {
+        opacity: 1;
+        transform: scale(0);
+        transform-origin: 1 1;
+    }
+
+    .icon__logo {
+        animation: fadeScaleOut;
+        animation-duration: 2.1s;
+        animation-timing-function: ease-in;
+    }
+
+    $j: 9;
+    @for $i from 1 through 10 {
+        .navbar__link:nth-child(#{$i}) {
+            animation: fadeScaleOut;
+            animation-duration: $j * 0.15s + 0.6;
+            animation-timing-function: ease-in;
+            $j: $j - 1;
+        }
+    }
+
+    .icon__cart {
+        animation: fadeScaleOut;
+        animation-duration: 0.6s;
+        animation-timing-function: ease-in;
+    }
+
+}
+
+@keyframes fadeOpacity {
+    0% {opacity: 0;}
+    60% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeScaleIn {
+    0% {transform: scale(0); opacity: 0;}
+    80% {opacity: 0;}
+    90% {opacity: 1;}
+    100% {transform: scale(1); opacity: 1;}
+}
+
+@keyframes fadeSlideX {
+    0% {transform: translate(30px, 6px); opacity: 0;}
+    30% {transform: translate(30px, 6px); opacity: 0;}
+    100% {transform: translate(0px, 6px); opacity: 1;}
+}
+
+@keyframes fadeScaleOut {
+    0% {transform: scale(1); opacity: 1;}
+    20% {opacity: 1;}
+    40% {opacity: 0;}
+    100% {transform: scale(0); opacity: 0;}
+}
+
+@keyframes fadeSlideToBottom {
+    0%   {height: 0; opacity: 0; top: 20px;}
+    1%   {height: auto;}
+    100% {opacity: 1; top:77px;}
+}
+
+@keyframes fadeSlideToTop {
+    0%   {height: auto; opacity: 1; top: 77px; overflow: visible; padding: 10px 40px 6px 40px;}
+    98%  {height: auto; overflow: visible;  padding: 10px 40px 6px 40px;}
+    99%  {height: 0; overflow: hidden; padding: 0;}
+    100% {opacity: 0; top:20px; }
+}
+
+@keyframes fadeSlideYIn {
+    0% {height: auto; opacity: 1; padding: 10px 40px 6px 40px; overflow: visible; transform: translateY(0)}
+    98% {height: auto; overflow: visible; padding: 10px 40px 6px 40px}
+    99% {height: 0; overflow: hidden; padding: 0}
+    100% {opacity: 0; transform: translateY(100px)}
+}
+
+@keyframes fadeSlideYOut {
+    0% {height: 0; opacity: 0; padding: 0; overflow: hidden; transform: translateY(100px)}
+    1% {height: auto; overflow: visible; padding: 10px 40px 6px 40px}
+    100% {opacity: 1; transform: translateY(0)}
+}
+
+@keyframes fadeWidthIn {
+    0% {opacity: 0; width: 0; padding: 0 0; margin-left: 0}
+    30% {opacity: 0}
+    100% {opacity: 1; width: 75px; padding: 0 8px; margin-left: 10px}
+}
+
+@keyframes fadeWidthOut {
+    0% {opacity: 1; width: 75px; padding: 0 8px; margin-left: 10px}
+    30% {opacity: 0}
+    100% {opacity: 0; width: 0; padding: 0 0; margin-left: 0}
+}
