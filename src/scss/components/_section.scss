@@ -1,7 +1,6 @@
 .section {
     position: relative;
     width: 100%;
-    height: 580px;
     padding: 40px 0 0 0;
 
     &__link-overall {
@@ -9,7 +8,11 @@
     }
 
     &__content {
+
         &-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
             height: auto;
             text-align: center;
@@ -28,13 +31,26 @@
             margin: auto;
         }
         &-subtitle {
-            
+            font-size: 19px;
+            line-height: 1.21053;
+            font-weight: 400;
+            letter-spacing: .012em;
+            font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+            margin-top: 6px;
         }
         &-cta-links {
             margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            .link {
+                margin-left: 27px;
+            }
+            & li:nth-child(1) .link {
+                margin-left: 0;
+            }
         }
         &-link {
-
+            
         }
     }
 
@@ -52,7 +68,27 @@
         }
     }
 
+    &--gap {
+        padding: 0;
+        .section {
+            border: none;
+            margin-top: 15px;
+        }
+    }
+
+    &__info {
+        &-new {
+            display: block;
+            font-size: 12px;
+            line-height: 1.33337;
+            letter-spacing: -.01em;
+            font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+            color: #bf4800;
+        }
+    }
+
     &__winter-holydays {
+        height: 570px;
         background-color: #eeeffe;
 
         .section__img-wrapper {
@@ -67,6 +103,152 @@
             }
             & li:nth-child(3) > figure {
                 background-image: url('/img/multiple-ipadair.png');
+            }
+        }
+    }
+
+    &__iphone13pro {
+        height: 500px;
+        background-image: url('/img/iphone-13pro-small.jpg');
+        background-size: cover;
+        background-position: bottom;
+        margin-top: 12px;
+    }
+
+    &__iphone13 {
+        height: 500px;
+        background-image: url('/img/iphone-13-small.jpg');
+        background-size: cover;
+        background-position: center;
+        margin-top: 12px;
+
+        .section__content {
+            &-wrapper {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            &-title {
+                color: $font-color-light;
+                margin: 0;
+            }
+            &-subtitle {
+                color: #fec2eb;
+            }
+        }
+    }
+
+    &__macbookpro {
+        height: 500px;
+        background-image: url('/img/macbook-pro-small.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__airpods {
+        height: 548px;
+        background-image: url('/img/airpods-small.jpg');
+        background-size: cover;
+        background-position: center;
+
+        .section__content {
+            &-wrapper {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                padding-bottom: 35px;
+            }
+            &-title {
+                margin: 0;
+            }
+            &-subtitle {
+            }
+        }
+    }
+
+    &__watch {
+        height: 500px;
+        background-image: url('/img/watch-small.jpg');
+        background-size: cover;
+        background-position: center;
+
+        .section__content {
+            &-img {
+                width: 122px;
+            }
+        }
+    }
+
+    &__ipadmini {
+        height: 500px;
+        background-image: url('/img/ipadmini-small.jpg');
+        background-size: cover;
+        background-position: center;
+
+        .section__content {
+            &-img {
+                width: 124px;
+            }
+        }
+    }
+
+    &__fitness {
+        height: 500px;
+        background-color: white;
+        background-image: url('/img/fitness-small.jpg');
+        background-size: cover;
+        background-position: center;
+
+        .section__content {
+            &-img {
+                width: 140px;
+            }
+            &-cta-links {
+                margin-top: 12px;
+                flex-direction: column;
+                & li:nth-child(2) .link {
+                    margin-left: 0;
+                }
+                & li:nth-child(2) {
+                    margin-top: 12px;
+                }
+            }
+            &-subtitle {
+                max-width: 330px;
+                margin-top: 12px;
+            }
+        }
+    }
+
+    &__tv {
+        height: 548px;
+        background-color: white;
+        background-image: url('/img/tv-small.jpg');
+        background-size: cover;
+        background-position: center;
+
+        .section__content {
+            &-cta-links {
+                margin-top: 12px;
+            }
+            &-wrapper {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                padding-bottom: 35px;
+            }
+            &-img:nth-child(1) {
+                width: 70px;
+            }
+            &-img:nth-child(2) {
+                width: 265px;
+                margin-top: 17px;
             }
         }
     }
@@ -103,16 +285,38 @@
                 letter-spacing: -.002em;
             }
             &-subtitle {
-    
+                font-size: 24px;
+                line-height: 1.16667;
+                letter-spacing: .009em;
             }
             &-cta-links {
-
+                .link {
+                    margin-left: 32px;
+                }
+                & li:nth-child(1) .link {
+                    margin-left: 0;
+                }
             }
             &-link {
                 font-size: 19px;
                 line-height: 1.21053;
                 font-weight: 400;
                 letter-spacing: .012em;
+            }
+        }
+
+        &--gap {
+            padding: 15px;
+
+            .section {
+                margin: 0;
+            }
+
+            & .section:nth-child(1) {
+                border-right: 7.5px solid white;
+            }
+            & .section:nth-child(2) {
+                border-left: 7.5px solid white;
             }
         }
     
@@ -122,6 +326,43 @@
     
         &__winter-holydays {
             
+        }
+        &__iphone13pro {
+            background-image: url('/img/iphone-13pro-large.jpg');
+            background-size: cover;
+            background-position: bottom;
+        }
+        &__iphone13 {
+            background-image: url('/img/iphone-13-large.jpg');
+
+            .section__content {
+                &-wrapper {
+                    height: auto;
+                }
+            }
+        }
+
+        &__macbookpro {
+            background-image: url('/img/macbook-pro-large.jpg');
+            padding-left: 15px;
+        }
+    
+        &__airpods {
+            background-image: url('/img/airpods-large.jpg');
+            padding-right: 15px;
+
+            .section__content {
+                &-wrapper {
+                    padding-bottom: 35px;
+                }
+            }
+        }
+        &__watch {
+            background-image: url('/img/watch-large.jpg');
+        }
+    
+        &__ipadmini {
+            background-image: url('/img/ipadmini-large.jpg');
         }
     }
 }
@@ -152,10 +393,17 @@
                 letter-spacing: -.005em;
             }
             &-subtitle {
-    
+                font-size: 28px;
+                line-height: 1.10722;
+                letter-spacing: .004em;
             }
             &-cta-links {
-
+                .link {
+                    margin-left: 35px;
+                }
+                & li:nth-child(1) .link {
+                    margin-left: 0;
+                }
             }
             &-link {
                 font-size: 21px;

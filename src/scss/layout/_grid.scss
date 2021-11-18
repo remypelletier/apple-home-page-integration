@@ -21,11 +21,16 @@ $grid-gutter-width: 1.5rem;
 
 .row {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
 }
 
 .col-centered {
     margin: auto;
+}
+
+.pt-0 {
+    padding-top: 0 !important;
 }
 
 .breakline {
