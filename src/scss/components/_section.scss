@@ -1,0 +1,480 @@
+@use 'sass:math';
+
+$gap-size: 12px;
+
+.section {
+    position: relative;
+    width: 100%;
+    height: 548px;
+    padding: 40px 0 0 0;
+
+    &__link-overall {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    &__content {
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            text-align: center;
+        }
+        &-img {
+            padding: 0 0 0 0;
+            width: 45px;
+            height: auto;
+        }
+        &-title {
+            font-size: 32px;
+            line-height: 1.125;
+            font-weight: 600;
+            letter-spacing: .004em;
+            font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+            margin: auto;
+        }
+        &-subtitle {
+            font-size: 19px;
+            line-height: 1.21053;
+            font-weight: 400;
+            letter-spacing: .012em;
+            font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+            margin-top: 6px;
+        }
+        &-cta-links {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+            .link {
+                margin-left: 27px;
+            }
+            & li:nth-child(1) .link {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__img {
+        height: 100%;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        
+        &-animated {
+            transform: rotate(0deg);
+            animation: rotateToTheRight;
+            animation-timing-function: ease;
+            animation-duration: 6s;
+        }
+    }
+
+    &--gap {
+        padding: 0;
+        .section {
+            border: none;
+            margin-top: $gap-size;
+        }
+    }
+
+    &__info {
+        &-new {
+            display: block;
+            font-size: 12px;
+            line-height: 1.33337;
+            letter-spacing: -.01em;
+            font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+            color: #bf4800;
+        }
+    }
+
+    &__winter-holydays {
+        height: 570px;
+        background-color: #eeeffe;
+
+        .section__img-wrapper {
+            height: 300px;
+            padding-top: 25px;
+    
+            & li:nth-child(1) > figure {
+                background-image: url('/img/multiple-macbookpro.png');
+            }
+            & li:nth-child(2) > figure {
+                background-image: url('/img/multiple-ipadmini.png');
+            }
+            & li:nth-child(3) > figure {
+                background-image: url('/img/multiple-ipadair.png');
+            }
+        }
+    }
+
+    &__iphone13pro {
+        background-image: url('/img/iphone-13pro-small.jpg');
+        background-size: cover;
+        background-position: bottom;
+        margin-top: 12px;
+    }
+
+    &__iphone13 {
+        background-image: url('/img/iphone-13-small.jpg');
+        background-size: cover;
+        background-position: center;
+        margin-top: 12px;
+
+        .section__content {
+            &-wrapper {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            &-title {
+                color: $font-color-light;
+                margin: 0;
+            }
+            &-subtitle {
+                color: #fec2eb;
+            }
+        }
+    }
+
+    &__macbookpro {
+        background-image: url('/img/macbook-pro-small.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__airpods {
+        background-image: url('/img/airpods-small.jpg');
+        background-size: cover;
+        background-position: center;
+
+        .section__content {
+            &-wrapper {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                padding-bottom: 35px;
+            }
+            &-title {
+                margin: 0;
+            }
+            &-subtitle {
+            }
+        }
+    }
+
+    &__watch {
+        background-image: url('/img/watch-small.jpg');
+        background-size: cover;
+        background-position: center;
+
+        .section__content {
+            &-img {
+                width: 122px;
+            }
+        }
+    }
+
+    &__ipadmini {
+        background-image: url('/img/ipadmini-small.jpg');
+        background-size: cover;
+        background-position: center;
+
+        .section__content {
+            &-img {
+                width: 124px;
+            }
+        }
+    }
+
+    &__fitness {
+        background-image: url('/img/fitness-small.jpg');
+        background-size: cover;
+        background-position: center;
+
+        .section__content {
+            &-img {
+                width: 140px;
+            }
+            &-cta-links {
+                margin-top: 12px;
+                flex-direction: column;
+                & li:nth-child(2) .link {
+                    margin-left: 0;
+                }
+                & li:nth-child(2) {
+                    margin-top: 12px;
+                }
+            }
+            &-subtitle {
+                max-width: 330px;
+                margin-top: 12px;
+            }
+        }
+    }
+
+    &__tv {
+        background-image: url('/img/tv-small.jpg');
+        background-size: cover;
+        background-position: center;
+
+        .section__content {
+            &-cta-links {
+                margin-top: 12px;
+            }
+            &-wrapper {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                padding-bottom: 35px;
+            }
+            &-img:nth-child(1) {
+                width: 70px;
+            }
+            &-img:nth-child(2) {
+                width: 265px;
+                margin-top: 17px;
+            }
+        }
+    }
+}
+
+@keyframes rotateToTheRight {
+    0% {transform: rotate(-10deg)}
+    100% {transform: rotate(0deg)}
+}
+
+@media screen and (min-width: ($grid-breakpoint-md * 1px)) {
+    .section {
+        position: relative;
+        width: 100%;
+        height: 580px;
+        padding: 40px 0 0 0;
+
+        &__divided {
+            .section__content {
+                &-title {
+                    font-size: 40px;
+                    line-height: 1.1;
+                    letter-spacing: 0em;
+                }
+                &-subtitle {
+                    font-size: 21px;
+                    line-height: 1.2381;
+                    letter-spacing: .016em;
+                }
+                &-cta-links {
+                    .link {
+                        font-size: 17px;
+                        line-height: 1.23536;
+                        letter-spacing: -.022em;
+                        margin-top: 0.7em;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    
+        &__content {
+            &-wrapper {
+                width: 100%;
+                height: auto;
+                text-align: center;
+            }
+            &-img {
+                width: 54px;
+            }
+            &-title {
+                font-size: 48px;
+                line-height: 1.08349;
+                letter-spacing: -.002em;
+            }
+            &-subtitle {
+                font-size: 24px;
+                line-height: 1.16667;
+                letter-spacing: .009em;
+            }
+            &-cta-links {
+                .link {
+                    margin-left: 32px;
+                }
+                & li:nth-child(1) .link {
+                    margin-left: 0;
+                }
+            }
+            &-link {
+                font-size: 19px;
+                line-height: 1.21053;
+                font-weight: 400;
+                letter-spacing: .012em;
+            }
+        }
+
+        &--gap {
+            padding: $gap-size;
+
+            .section {
+                margin: 0;
+            }
+
+            & .section:nth-child(1) {
+                border-right: math.div($gap-size / 2) solid white;
+            }
+            & .section:nth-child(2) {
+                border-left: math.div($gap-size / 2) solid white;
+            }
+        }
+    
+        &__iphone13pro {
+            background-image: url('/img/iphone-13pro-large.jpg');
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        &__iphone13 {
+            background-image: url('/img/iphone-13-large.jpg');
+
+            .section__content {
+                &-wrapper {
+                    height: auto;
+                }
+            }
+        }
+
+        &__macbookpro {
+            background-image: url('/img/macbook-pro-large.jpg');
+            padding-left: $gap-size;
+        }
+    
+        &__airpods {
+            background-image: url('/img/airpods-large.jpg');
+            padding-right: $gap-size;
+
+            .section__content {
+                &-wrapper {
+                    padding-bottom: 35px;
+                }
+            }
+        }
+
+        &__watch {
+            background-image: url('/img/watch-large.jpg');
+            .section__content {
+                &-img {
+                    width: 146px;
+                    margin-top: 6px;
+                    margin-bottom: 3px;
+                }
+            }
+        }
+    
+        &__ipadmini {
+            background-image: url('/img/ipadmini-large.jpg');
+            .section__content {
+                &-img {
+                    width: 174px;
+                    margin-top: 25px;
+                }
+                &-subtitle {
+                    max-width: 100%;
+                    margin-top: 12px;
+                }
+            }
+        }
+
+        &__fitness {
+            .section__content {
+                &-cta-links {
+                    margin-top: 12px;
+                    flex-direction: row;
+                    & li:nth-child(2) .link {
+                        margin-left: 28px;
+                    }
+                    & li:nth-child(2) {
+                        margin-top: 0px;
+                    }
+                }
+                &-img {
+                    margin-top: 24px;
+                    width: 174px;
+                }
+                &-subtitle {
+                    max-width: 100%;
+                    margin-top: 12px;
+                }
+            }
+        }
+
+        &__tv {
+            .section__content {
+                &-img:nth-child(1) {
+                    width: 80px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: ($grid-breakpoint-lg * 1px)) {
+    .section {
+        position: relative;
+        width: 100%;
+        height: 640px;
+        padding: 40px 0 0 0;
+    
+        &__link-overall {
+            position: absolute;
+        }
+        &__content {
+            &-wrapper {
+                width: 100%;
+                height: auto;
+                text-align: center;
+            }
+            &-img {
+                width: 70px;
+            }
+            &-title {
+                font-size: 56px;
+                line-height: 1.07143;
+                letter-spacing: -.005em;
+            }
+            &-subtitle {
+                font-size: 28px;
+                line-height: 1.10722;
+                letter-spacing: .004em;
+            }
+            &-cta-links {
+                .link {
+                    margin-left: 35px;
+                }
+                & li:nth-child(1) .link {
+                    margin-left: 0;
+                }
+            }
+            &-link {
+                font-size: 21px;
+                line-height: 1.381;
+                letter-spacing: .011em;
+            }
+        }
+
+        &__winter-holydays {
+            .section__img-wrapper {
+                height: 350px;
+            }
+        }
+    }
+}

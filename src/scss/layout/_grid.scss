@@ -21,7 +21,20 @@ $grid-gutter-width: 1.5rem;
 
 .row {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
+}
+
+.col-centered {
+    margin: auto;
+}
+
+.pt-0 {
+    padding-top: 0 !important;
+}
+
+.breakline {
+    display: block;
 }
 
 @for $i from 1 through $grid-cols {
@@ -36,6 +49,9 @@ $grid-gutter-width: 1.5rem;
             flex-basis: math.div(100, math.div($grid-cols, $i)) * 1%;
         }
     }
+    .breakline-sm {
+        display: inline;
+    }
 }
 
 @media screen and (min-width: ($grid-breakpoint-md * 1px)) {
@@ -43,6 +59,9 @@ $grid-gutter-width: 1.5rem;
         .col-md-#{$i} {
             flex-basis: math.div(100, math.div($grid-cols, $i)) * 1%;
         }
+    }
+    .breakline-md {
+        display: inline;
     }
 }
 
@@ -52,6 +71,9 @@ $grid-gutter-width: 1.5rem;
             flex-basis: math.div(100, math.div($grid-cols, $i)) * 1%;
         }
     }
+    .breakline-lg {
+        display: inline;
+    }
 }
 
 @media screen and (min-width: ($grid-breakpoint-xl * 1px)) {
@@ -59,5 +81,8 @@ $grid-gutter-width: 1.5rem;
         .col-xl-#{$i} {
             flex-basis: math.div(100, math.div($grid-cols, $i)) * 1%;
         }
+    }
+    .breakline-xl {
+        display: inline;
     }
 }
