@@ -1,9 +1,10 @@
-.global-nav {
+.global-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: $dark-grey;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: saturate(180%) blur(20px);
     transition: background-color 0.6s ease-in;
     z-index: 9999;
 
@@ -155,7 +156,7 @@
 }
 
 @media screen and (min-width: ($grid-breakpoint-md * 1px)) {
-    .global-nav {
+    .global-header {
         .icon__burger {
             display: none;
         }
@@ -213,10 +214,10 @@
 }
 
 /**
-*** Class added on global-nav element when user open mobile menu
+*** Class added on global-header element when user open mobile menu
 **/
 .small-screen__menu-open {
-    &.global-nav {
+    &.global-header {
         background-color: black;
     }
     .icon {
@@ -259,10 +260,10 @@
 }
 
 /**
-*** Class added on global-nav when user use mobile search form
+*** Class added on global-header when user use mobile search form
 **/
 .small-screen__form-open {
-    .global-nav__navbar {
+    .global-header__navbar {
         transform: translateY(-32px);
     }
     .navbar {
@@ -343,7 +344,7 @@
     }
 
     .utils__filter {
-        height: 100%;
+        height: 100vh;
         overflow: visible;
         opacity: 1;
         animation: fadeOpacity;
