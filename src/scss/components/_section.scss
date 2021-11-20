@@ -330,10 +330,10 @@ $gap-size: 12px;
             }
 
             & .section:nth-child(1) {
-                border-right: math.div($gap-size / 2) solid white;
+                border-right: math.div($gap-size, 2) solid white;
             }
             & .section:nth-child(2) {
-                border-left: math.div($gap-size / 2) solid white;
+                border-left: math.div($gap-size, 2) solid white;
             }
         }
     
