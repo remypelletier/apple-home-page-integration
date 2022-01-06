@@ -103,26 +103,26 @@ $gap-size: 12px;
             padding-top: 25px;
     
             & li:nth-child(1) > figure {
-                background-image: url('/img/multiple-macbookpro.png');
+                background-image: url('../img/multiple-macbookpro.png');
             }
             & li:nth-child(2) > figure {
-                background-image: url('/img/multiple-ipadmini.png');
+                background-image: url('../img/multiple-ipadmini.png');
             }
             & li:nth-child(3) > figure {
-                background-image: url('/img/multiple-ipadair.png');
+                background-image: url('../img/multiple-ipadair.png');
             }
         }
     }
 
     &__iphone13pro {
-        background-image: url('/img/iphone-13pro-small.jpg');
+        background-image: url('../img/iphone-13pro-small.jpg');
         background-size: cover;
         background-position: bottom;
         margin-top: 12px;
     }
 
     &__iphone13 {
-        background-image: url('/img/iphone-13-small.jpg');
+        background-image: url('../img/iphone-13-small.jpg');
         background-size: cover;
         background-position: center;
         margin-top: 12px;
@@ -146,13 +146,13 @@ $gap-size: 12px;
     }
 
     &__macbookpro {
-        background-image: url('/img/macbook-pro-small.jpg');
+        background-image: url('../img/macbook-pro-small.jpg');
         background-size: cover;
         background-position: center;
     }
 
     &__airpods {
-        background-image: url('/img/airpods-small.jpg');
+        background-image: url('../img/airpods-small.jpg');
         background-size: cover;
         background-position: center;
 
@@ -174,7 +174,7 @@ $gap-size: 12px;
     }
 
     &__watch {
-        background-image: url('/img/watch-small.jpg');
+        background-image: url('../img/watch-small.jpg');
         background-size: cover;
         background-position: center;
 
@@ -186,7 +186,7 @@ $gap-size: 12px;
     }
 
     &__ipadmini {
-        background-image: url('/img/ipadmini-small.jpg');
+        background-image: url('../img/ipadmini-small.jpg');
         background-size: cover;
         background-position: center;
 
@@ -198,7 +198,7 @@ $gap-size: 12px;
     }
 
     &__fitness {
-        background-image: url('/img/fitness-small.jpg');
+        background-image: url('../img/fitness-small.jpg');
         background-size: cover;
         background-position: center;
 
@@ -224,7 +224,7 @@ $gap-size: 12px;
     }
 
     &__tv {
-        background-image: url('/img/tv-small.jpg');
+        background-image: url('../img/tv-small.jpg');
         background-size: cover;
         background-position: center;
 
@@ -338,13 +338,13 @@ $gap-size: 12px;
         }
     
         &__iphone13pro {
-            background-image: url('/img/iphone-13pro-large.jpg');
+            background-image: url('../img/iphone-13pro-large.jpg');
             background-size: cover;
             background-position: bottom;
         }
 
         &__iphone13 {
-            background-image: url('/img/iphone-13-large.jpg');
+            background-image: url('../img/iphone-13-large.jpg');
 
             .section__content {
                 &-wrapper {
@@ -354,12 +354,12 @@ $gap-size: 12px;
         }
 
         &__macbookpro {
-            background-image: url('/img/macbook-pro-large.jpg');
+            background-image: url('../img/macbook-pro-large.jpg');
             padding-left: $gap-size;
         }
     
         &__airpods {
-            background-image: url('/img/airpods-large.jpg');
+            background-image: url('../img/airpods-large.jpg');
             padding-right: $gap-size;
 
             .section__content {
@@ -370,7 +370,7 @@ $gap-size: 12px;
         }
 
         &__watch {
-            background-image: url('/img/watch-large.jpg');
+            background-image: url('../img/watch-large.jpg');
             .section__content {
                 &-img {
                     width: 146px;
@@ -381,7 +381,7 @@ $gap-size: 12px;
         }
     
         &__ipadmini {
-            background-image: url('/img/ipadmini-large.jpg');
+            background-image: url('../img/ipadmini-large.jpg');
             .section__content {
                 &-img {
                     width: 174px;

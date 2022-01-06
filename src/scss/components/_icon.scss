@@ -45,7 +45,7 @@
         background-size: 16px 44px;
         background-repeat: no-repeat;
         background-position: center center;
-        background-image: url('/img/apple-icon.svg');
+        background-image: url('../img/apple-icon.svg');
         width: 48px;
         min-width: 16px;
 
@@ -64,7 +64,7 @@
         display: inline-block;
         width: 30px;
         height: 36px;
-        background-image: url('/img/apple-loop.svg');
+        background-image: url('../img/apple-loop.svg');
         background-repeat: no-repeat;
         background-size: 16px;
         background-position: center;
@@ -74,7 +74,7 @@
     
     &__cart {
         width: 48px;
-        background-image: url('/img/apple-cart.svg');
+        background-image: url('../img/apple-cart.svg');
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
